@@ -25,7 +25,7 @@ vendor
 *.env
 resources.yaml
 .charts
-*.tgz
+#*.tgz
 
 *-values.yaml
 
