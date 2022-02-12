@@ -8,33 +8,6 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.2.4
 spec:
   preserveUnknownFields: false
-  additionalPrinterColumns:
-    - JSONPath: .metadata.creationTimestamp
-      name: Age
-      type: date
-    - JSONPath: .status.state
-      name: State
-      type: string
-    - JSONPath: .spec.spec.template.spec.artifact.flinkVersion
-      name: Flink-Version
-      type: string
-    - JSONPath: .spec.spec.template.spec.artifact.flinkImageTag
-      name: Flink-Image-Tag
-      type: string
-    - JSONPath: .spec.spec.template.spec.artifact.flinkImageRegistry
-      name: Flink-Image-Registry
-      type: string
-    - JSONPath: .spec.spec.template.spec.artifact.flinkImageRepository
-      name: Flink-Image-Repository
-      type: string
-  conversion:
-    strategy: Webhook
-    webhookClientConfig:
-      caBundle: {{ include "vp-k8s-operator-crds.webhookCaBundle" . }}
-      service:
-        name: {{ .Values.webhookService.name }}
-        namespace: {{ default .Release.Namespace .Values.webhookService.namespace }}
-        path: /convert
   group: ververicaplatform.fintechstudios.com
   names:
     kind: VpDeployment
@@ -42,9 +15,6 @@ spec:
     plural: vpdeployments
     singular: vpdeployment
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
     - name: v1beta1
       schema:
@@ -6114,6 +6084,25 @@ spec:
           type: object
       served: true
       storage: false
+      additionalPrinterColumns:
+      - jsonPath: .metadata.creationTimestamp
+        name: Age
+        type: date
+      - jsonPath: .status.state
+        name: State
+        type: string
+      - jsonPath: .spec.spec.template.spec.artifact.flinkVersion
+        name: Flink-Version
+        type: string
+      - jsonPath: .spec.spec.template.spec.artifact.flinkImageTag
+        name: Flink-Image-Tag
+        type: string
+      - jsonPath: .spec.spec.template.spec.artifact.flinkImageRegistry
+        name: Flink-Image-Registry
+        type: string
+      - jsonPath: .spec.spec.template.spec.artifact.flinkImageRepository
+        name: Flink-Image-Repository
+        type: string
 status:
   acceptedNames:
     kind: ""

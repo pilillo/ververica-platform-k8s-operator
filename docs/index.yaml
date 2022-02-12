@@ -3,7 +3,16 @@ entries:
   vp-k8s-operator:
   - apiVersion: v1
     appVersion: latest
-    created: "2022-02-12T14:56:52.451474+01:00"
+    created: "2022-02-12T15:43:54.861476+01:00"
+    description: A Helm chart for the Ververica Platform K8s Operator
+    digest: e524eef4eb23bb8fc08c6629c9aba9f23b630b4b52c82a2f29cfc13d051e56f8
+    name: vp-k8s-operator
+    urls:
+    - https://pilillo.github.io/ververica-platform-k8s-operator/vp-k8s-operator-0.12.2.tgz
+    version: 0.12.2
+  - apiVersion: v1
+    appVersion: latest
+    created: "2022-02-12T15:43:54.86104+01:00"
     description: A Helm chart for the Ververica Platform K8s Operator
     digest: 1582227def04401c20f95f898e805cafd374c57f755e444200294b4c196f3ed9
     name: vp-k8s-operator
@@ -13,11 +22,20 @@ entries:
   vp-k8s-operator-crds:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-02-12T14:56:52.454166+01:00"
+    created: "2022-02-12T15:43:54.870715+01:00"
+    description: A Helm chart for the CRDs that accompany the vp-k8s-operator
+    digest: 09f10cabdb70c40e11d5312f4aca05bb58cf40cc1cf93f4caddbf2229ad059ef
+    name: vp-k8s-operator-crds
+    urls:
+    - https://pilillo.github.io/ververica-platform-k8s-operator/vp-k8s-operator-crds-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-02-12T15:43:54.863374+01:00"
     description: A Helm chart for the CRDs that accompany the vp-k8s-operator
     digest: a61f19dd63b401a9e4f8419b61ba668ebe0c6a643c0ffa0c1c0bca5110558f42
     name: vp-k8s-operator-crds
     urls:
     - https://pilillo.github.io/ververica-platform-k8s-operator/vp-k8s-operator-crds-0.2.2.tgz
     version: 0.2.2
-generated: "2022-02-12T14:56:52.448496+01:00"
+generated: "2022-02-12T15:43:54.860417+01:00"

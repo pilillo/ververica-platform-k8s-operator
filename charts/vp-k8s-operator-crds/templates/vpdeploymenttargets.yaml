@@ -8,21 +8,6 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.2.4
 spec:
   preserveUnknownFields: false
-  additionalPrinterColumns:
-    - JSONPath: .spec.metadata.namespace
-      name: Namespace
-      type: string
-    - JSONPath: .metadata.creationTimestamp
-      name: Age
-      type: date
-  conversion:
-    strategy: Webhook
-    webhookClientConfig:
-      caBundle: {{ include "vp-k8s-operator-crds.webhookCaBundle" . }}
-      service:
-        name: {{ .Values.webhookService.name }}
-        namespace: {{ default .Release.Namespace .Values.webhookService.namespace }}
-        path: /convert
   group: ververicaplatform.fintechstudios.com
   names:
     kind: VpDeploymentTarget
@@ -30,8 +15,6 @@ spec:
     plural: vpdeploymenttargets
     singular: vpdeploymenttarget
   scope: Namespaced
-  subresources: {}
-  version: v1beta1
   versions:
     - name: v1beta1
       schema:
@@ -161,6 +144,13 @@ spec:
           type: object
       served: true
       storage: false
+      additionalPrinterColumns:
+        - jsonPath: .spec.metadata.namespace
+          name: Namespace
+          type: string
+        - jsonPath: .metadata.creationTimestamp
+          name: Age
+          type: date
 status:
   acceptedNames:
     kind: ""
